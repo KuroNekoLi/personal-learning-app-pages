@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Angular state 與 UI 的互動資料流</title>
+  <desc id="desc">Component class 的 state 透過 interpolation 和 property binding 顯示在 UI；使用者事件透過 event binding 呼叫 handler，handler 更新 state，Angular 再同步 view。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8276d8" />
+    </marker>
+  </defs>
+  <rect width="900" height="420" rx="22" fill="#f8f7ff" />
+  <text x="450" y="46" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#25233a">從 state 到 UI，再由事件回到 state</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="46" y="135" width="180" height="96" rx="14" fill="#ffffff" stroke="#d9d5f4" stroke-width="2" />
+    <text x="136" y="170" font-size="16" font-weight="700" fill="#37334f">Component class</text>
+    <text x="136" y="198" font-size="13" fill="#64627a">selectedUser</text>
+    <text x="136" y="218" font-size="13" fill="#64627a">imagePath</text>
+    <path d="M228 183 H300" stroke="#8276d8" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="310" y="135" width="220" height="96" rx="14" fill="#ffffff" stroke="#d9d5f4" stroke-width="2" />
+    <text x="420" y="170" font-size="16" font-weight="700" fill="#37334f">Template bindings</text>
+    <text x="420" y="198" font-size="13" fill="#64627a">{{ name }} · [src]="imagePath"</text>
+    <text x="420" y="218" font-size="13" fill="#64627a">class → UI</text>
+    <path d="M532 183 H604" stroke="#8276d8" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="614" y="135" width="220" height="96" rx="14" fill="#ece9ff" stroke="#b9b0ef" stroke-width="2" />
+    <text x="724" y="170" font-size="16" font-weight="700" fill="#37334f">畫面呈現</text>
+    <text x="724" y="198" font-size="13" fill="#64627a">名稱與圖片</text>
+    <text x="724" y="218" font-size="13" fill="#64627a">由目前 state 推導</text>
+    <path d="M724 235 V303 H558" fill="none" stroke="#d1848b" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="350" y="290" width="200" height="72" rx="14" fill="#fff6f6" stroke="#e7c3c6" stroke-width="2" />
+    <text x="450" y="320" font-size="16" font-weight="700" fill="#633b40">click → handler</text>
+    <text x="450" y="344" font-size="13" fill="#79575b">event 回到 class</text>
+    <path d="M348 326 H136 V239" fill="none" stroke="#d1848b" stroke-width="3" marker-end="url(#arrow)" />
+    <text x="240" y="314" font-size="12" fill="#79575b">更新 state → Angular 同步 view</text>
+  </g>
+</svg>

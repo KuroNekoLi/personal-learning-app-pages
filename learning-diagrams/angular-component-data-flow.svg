@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Angular Component 的 Data Down 與 Events Up</title>
+  <desc id="desc">AppComponent 將 User 透過 Input 傳給 UserComponent。UserComponent 透過 Output 將選取的 userId 傳回 Parent。Parent 更新 selectedUserId，推導所選 User，再將狀態傳給 TasksComponent。</desc>
+  <defs>
+    <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5362d7"/></marker>
+    <marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#cc5260"/></marker>
+    <style>.bg{fill:#f9f9ff}.box{fill:#fff;stroke:#c5cae9;stroke-width:2}.parent{fill:#e9ebff;stroke:#5965d8}.child{fill:#fff}.t{font:700 23px system-ui,sans-serif;fill:#202545}.s{font:16px system-ui,sans-serif;fill:#4b526e}.blue{stroke:#5362d7;stroke-width:3;fill:none;marker-end:url(#blue)}.red{stroke:#cc5260;stroke-width:3;fill:none;marker-end:url(#red)}.legend{font:600 17px system-ui,sans-serif}</style>
+  </defs>
+  <rect class="bg" width="1000" height="560" rx="24"/>
+  <text class="t" x="500" y="48" text-anchor="middle">Component Tree 同時也是 Data Flow Tree</text>
+  <rect class="box parent" x="330" y="85" width="340" height="130" rx="18"/>
+  <text class="t" x="500" y="126" text-anchor="middle">AppComponent</text>
+  <text class="s" x="500" y="158" text-anchor="middle">持有 users、selectedUserId</text>
+  <text class="s" x="500" y="186" text-anchor="middle">推導 selectedUser</text>
+  <rect class="box child" x="75" y="340" width="330" height="130" rx="18"/>
+  <text class="t" x="240" y="381" text-anchor="middle">UserComponent</text>
+  <text class="s" x="240" y="414" text-anchor="middle">Input：User</text>
+  <text class="s" x="240" y="442" text-anchor="middle">click → Output(userId)</text>
+  <rect class="box child" x="595" y="340" width="330" height="130" rx="18"/>
+  <text class="t" x="760" y="381" text-anchor="middle">TasksComponent</text>
+  <text class="s" x="760" y="414" text-anchor="middle">Input：selected user</text>
+  <text class="s" x="760" y="442" text-anchor="middle">filter tasks → render list</text>
+  <path class="blue" d="M410 215C365 268 305 285 270 337"/>
+  <text class="legend" x="310" y="276" fill="#5362d7">Input：資料向下</text>
+  <path class="red" d="M310 340C370 277 405 254 447 215"/>
+  <text class="legend" x="90" y="284" fill="#cc5260">Output：事件向上</text>
+  <path class="blue" d="M590 215C635 268 695 285 730 337"/>
+  <text class="legend" x="700" y="276" fill="#5362d7">新的狀態向下</text>
+  <text class="s" x="500" y="520" text-anchor="middle">Child 回報「發生什麼」；Parent 決定狀態如何改變，再傳給需要它的 Child。</text>
+</svg>

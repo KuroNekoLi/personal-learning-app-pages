@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" role="img" aria-labelledby="title desc">
+  <title id="title">Angular @for 與 @if 將資料和狀態映射到 UI</title>
+  <desc id="desc">Users collection 透過 @for 與穩定 track user.id 產生多個 UserComponent；selectedUser 狀態透過 @if 在 TasksComponent 和選擇提示之間切換。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5965d8"/></marker>
+    <style>.bg{fill:#f8f9ff}.box{fill:#fff;stroke:#929bd8;stroke-width:2}.data{fill:#e8f1ff}.flow{fill:#f2eeff}.t{font:700 22px system-ui,sans-serif;fill:#202545}.s{font:16px system-ui,sans-serif;fill:#4b526e}.line{stroke:#5965d8;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#c55160;stroke-width:2;stroke-dasharray:8 7;fill:none}</style>
+  </defs>
+  <rect class="bg" width="1000" height="460" rx="24"/>
+  <text class="t" x="500" y="48" text-anchor="middle">Template Control Flow：資料 / 狀態決定畫面結構</text>
+  <rect class="box data" x="55" y="118" width="230" height="105" rx="16"/>
+  <text class="t" x="170" y="159" text-anchor="middle">users[]</text><text class="s" x="170" y="191" text-anchor="middle">資料集合</text>
+  <path class="line" d="M285 170H370"/>
+  <rect class="box flow" x="375" y="118" width="250" height="105" rx="16"/>
+  <text class="t" x="500" y="159" text-anchor="middle">@for</text><text class="s" x="500" y="191" text-anchor="middle">track user.id</text>
+  <path class="line" d="M625 170H710"/>
+  <rect class="box" x="715" y="105" width="230" height="58" rx="14"/><text class="s" x="830" y="141" text-anchor="middle">UserComponent (u1)</text>
+  <rect class="box" x="715" y="175" width="230" height="58" rx="14"/><text class="s" x="830" y="211" text-anchor="middle">UserComponent (u2) …</text>
+  <rect class="box data" x="55" y="305" width="230" height="95" rx="16"/>
+  <text class="t" x="170" y="344" text-anchor="middle">selectedUser</text><text class="s" x="170" y="373" text-anchor="middle">存在 / 尚未選取</text>
+  <path class="line" d="M285 352H370"/>
+  <rect class="box flow" x="375" y="305" width="250" height="95" rx="16"/>
+  <text class="t" x="500" y="345" text-anchor="middle">@if / @else</text><text class="s" x="500" y="375" text-anchor="middle">依狀態選擇 UI</text>
+  <path class="line" d="M625 352H710"/>
+  <rect class="box" x="715" y="292" width="230" height="58" rx="14"/><text class="s" x="830" y="328" text-anchor="middle">TasksComponent</text>
+  <rect class="box" x="715" y="362" width="230" height="58" rx="14"/><text class="s" x="830" y="398" text-anchor="middle">選擇使用者提示</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">Signal 與 computed 的依賴流程</title>
+  <desc id="desc">selectedUser Signal 更新後，imagePath computed 的快取失效；Template 讀取衍生 Signal，Angular 標記相關 view 更新。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5965d8"/></marker>
+    <style>
+      .bg{fill:#f8f9ff}.box{fill:#fff;stroke:#5965d8;stroke-width:2}.source{fill:#e8eaff}.derived{fill:#edf7ff}.view{fill:#f3efff}.line{stroke:#5965d8;stroke-width:3;fill:none;marker-end:url(#arrow)}.t{font:600 22px system-ui,sans-serif;fill:#202545}.s{font:16px system-ui,sans-serif;fill:#48506c}.h{font:700 27px system-ui,sans-serif;fill:#202545}
+    </style>
+  </defs>
+  <rect class="bg" width="1000" height="420" rx="24"/>
+  <text class="h" x="500" y="52" text-anchor="middle">Reactive Dependency：狀態 → 衍生值 → 畫面</text>
+  <rect class="box source" x="55" y="135" width="245" height="125" rx="18"/>
+  <text class="t" x="177" y="178" text-anchor="middle">selectedUser</text><text class="s" x="177" y="213" text-anchor="middle">Writable Signal</text><text class="s" x="177" y="239" text-anchor="middle">讀取 () · 更新 .set()</text>
+  <path class="line" d="M300 197H385"/>
+  <rect class="box derived" x="390" y="135" width="245" height="125" rx="18"/>
+  <text class="t" x="512" y="178" text-anchor="middle">imagePath</text><text class="s" x="512" y="213" text-anchor="middle">computed Signal</text><text class="s" x="512" y="239" text-anchor="middle">依賴變更後重新計算</text>
+  <path class="line" d="M635 197H720"/>
+  <rect class="box view" x="725" y="135" width="220" height="125" rx="18"/>
+  <text class="t" x="835" y="178" text-anchor="middle">Template</text><text class="s" x="835" y="213" text-anchor="middle">讀取 imagePath()</text><text class="s" x="835" y="239" text-anchor="middle">相關 view 會更新</text>
+  <path d="M177 295v46h658v-46" fill="none" stroke="#d25864" stroke-width="2.5" stroke-dasharray="8 7"/>
+  <text class="s" x="506" y="376" text-anchor="middle">Signal 更新提供通知；Angular 仍透過自己的 view / change-detection 流程更新畫面</text>
+</svg>

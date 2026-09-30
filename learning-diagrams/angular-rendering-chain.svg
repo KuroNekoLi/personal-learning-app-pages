@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-labelledby="title desc">
+  <title id="title">Angular 從入口到畫面的啟動流程</title>
+  <desc id="desc">瀏覽器載入 HTML host 與建置後的 JavaScript，入口程式呼叫 bootstrapApplication，Angular 對應 Root Component selector 和 host，最後呈現 Template。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8276d8" />
+    </marker>
+  </defs>
+  <rect width="760" height="560" rx="22" fill="#f8f7ff" />
+  <text x="380" y="46" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#25233a">Angular 畫面如何出現</text>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="180" y="78" width="400" height="72" rx="14" fill="#ffffff" stroke="#d9d5f4" stroke-width="2" />
+    <text x="380" y="108" font-size="17" font-weight="700" fill="#37334f">瀏覽器載入頁面</text>
+    <text x="380" y="132" font-size="13" fill="#64627a">index.html 的 host + 建置後 JavaScript</text>
+    <path d="M380 151 V179" stroke="#8276d8" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="180" y="188" width="400" height="72" rx="14" fill="#ffffff" stroke="#d9d5f4" stroke-width="2" />
+    <text x="380" y="218" font-size="17" font-weight="700" fill="#37334f">執行 Angular 入口</text>
+    <text x="380" y="242" font-size="13" fill="#64627a">main.ts 呼叫 bootstrapApplication(AppComponent)</text>
+    <path d="M380 261 V289" stroke="#8276d8" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="180" y="298" width="400" height="72" rx="14" fill="#ffffff" stroke="#d9d5f4" stroke-width="2" />
+    <text x="380" y="328" font-size="17" font-weight="700" fill="#37334f">找到 Root Component 的 host</text>
+    <text x="380" y="352" font-size="13" fill="#64627a">selector: app-root 對應 &lt;app-root&gt;</text>
+    <path d="M380 371 V399" stroke="#8276d8" stroke-width="3" marker-end="url(#arrow)" />
+    <rect x="180" y="408" width="400" height="72" rx="14" fill="#ece9ff" stroke="#b9b0ef" stroke-width="2" />
+    <text x="380" y="438" font-size="17" font-weight="700" fill="#37334f">呈現 Component Template</text>
+    <text x="380" y="462" font-size="13" fill="#64627a">Template 建立 view，畫面出現在 host 之中</text>
+    <text x="380" y="520" font-size="13" fill="#76748a">記住：瀏覽器執行的是 build output，不是原始 TypeScript。</text>
+  </g>
+</svg>
